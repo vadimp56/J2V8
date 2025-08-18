@@ -5,10 +5,10 @@ import subprocess
 import sys
 import platform
 
-from build_structures import BuildSystem, BuildStep
-import constants as c
-import build_utils as utils
-import docker_configs as dkr_cfg
+from .build_structures import BuildSystem, BuildStep
+from . import constants as c
+from . import build_utils as utils
+from . import docker_configs as dkr_cfg
 
 class DockerBuildStep(BuildStep):
     def __init__(self, platform, build_cwd = None, host_cwd = None, v8_cwd = None):

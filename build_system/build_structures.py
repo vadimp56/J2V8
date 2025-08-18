@@ -5,9 +5,9 @@ import commands
 import os
 import sys
 from shutil import copy2
-import build_settings as s
-import build_utils as utils
-import shared_build_steps as sbs
+from . import build_settings as s
+from . import build_utils as utils
+from . import shared_build_steps as sbs
 
 class PlatformConfig():
     """Configuration container for all values that are defined for a single target-platform"""

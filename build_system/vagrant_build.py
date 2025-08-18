@@ -1,9 +1,9 @@
 import atexit
 import subprocess
 import sys
-import build_utils as utils
-from build_structures import BuildSystem, BuildStep
-import shared_build_steps as u
+from . import build_utils as utils
+from .build_structures import BuildSystem, BuildStep
+from . import shared_build_steps as u
 
 class VagrantBuildStep(BuildStep):
     def __init__(self, platform, build_cwd = None, host_cwd = None, pre_build_cmd = None):

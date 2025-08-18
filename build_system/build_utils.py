@@ -7,7 +7,7 @@ import subprocess
 import sys
 from itertools import ifilter
 
-import constants as c
+from . import constants as c
 
 V8Version = collections.namedtuple("V8Version", "major minor build patch is_candidate")
 NodeJSVersion = collections.namedtuple("NodeJSVersion", "major minor patch is_release")

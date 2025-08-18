@@ -1,7 +1,7 @@
 import argparse
 
-import constants as c
-import build_constants as bc
+from . import constants as c
+from . import build_constants as bc
 
 class BuildParams(object):
     """Value container for all build-parameters"""
@@ -22,7 +22,7 @@ class BuildParams(object):
     }
 
     # additional --buildstep parameters (e.g. --j2v8test)
-    step_arg_params = dict((step, None) for step in bc.atomic_build_step_sequence)
+    step_arg_params = {step: None for step in bc.atomic_build_step_sequence}
 
     # collection of all known parameters
     known_params = {}
@@ -36,14 +36,14 @@ class BuildParams(object):
 
         unhandled = set(param_dict.keys()).difference(set(known_params.keys()))
 
-        if any(unhandled):
+        if unhandled:
             raise Exception("Unhandled BuildParams: " + str(unhandled))
 
         for param in known_params:
             # try to read value from input
             value = param_dict.get(param)
 
-            if value != None:
+            if value is not None:
                 # use input value
                 setattr(self, param, value)
             else:
