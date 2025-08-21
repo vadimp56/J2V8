@@ -1,7 +1,7 @@
 """Contains the fundamental data-structures that are used for the build-process"""
 
 from abc import ABCMeta, abstractmethod
-import commands
+import subprocess
 import os
 import sys
 from shutil import copy2
