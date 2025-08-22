@@ -5,7 +5,7 @@ group = 'com.eclipsesource.j2v8'
 archivesBaseName = 'j2v8'
 version = System.getenv('J2V8_FULL_VERSION')
 
-ext."signing.secretKeyRingFile" = '/.gnupg/secring.gpg'
+ext."signing.secretKeyRingFile" = "${System.getProperty('user.home')}/.gnupg/secring.gpg"
 ext."signing.password" = System.getenv("KEYSTORE_PASSWORD")
 ext."signing.keyId" = System.getenv("KEY_ID")
 
